@@ -21,9 +21,8 @@ class Translator
     end
 
     def write_to_file(braille_array)
-      destination_file = File.open(@output_file, "w")
+      destination_file = File.open(@output_file, "a")
       destination_file.write(braille_array)
-      destination_file.close
     end
 
     def convert_string_to_char_array(string)
@@ -46,15 +45,15 @@ class Translator
       printable_string = top_line + "\n" + middle_line + "\n" + bottom_line
     end
 
-    def limit_lines_to_40_chars(char_array)
-      if char_array.length <= 40
-        braille_array = translate(char_array)
-        formatted_braille_array = format_braille_to_print(braille_array)
-        write_to_file(formatted_braille_array)
+    def limit_lines_to_80_chars(braille_array)
+      if braille_array.length <= 40
+        printable_string = format_braille_to_print(braille_array)
+        write_to_file(printable_string + "\n")
       else
-        limit_lines_to_40_chars(char_array.slice(1..40))
-        sliced_char_array = char_array.slice(41..char_array.length)
-        limit_lines_to_40_chars(sliced_char_array)
+        left_braille_array = braille_array.slice(0...39)
+        right_braille_array = braille_array.slice(40...braille_array.length)
+        limit_lines_to_80_chars(left_braille_array)
+        limit_lines_to_80_chars(right_braille_array)
       end
     end
 end

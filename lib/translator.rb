@@ -1,4 +1,4 @@
-require "./lib/braille_alphabet"
+require "./lib/english_to_braille_alphabet"
 require "pry"
 
 class Translator
@@ -30,7 +30,7 @@ class Translator
     end
 
     def translate(char_array)
-      alphabet = BrailleAlphabet.new
+      alphabet = EnglishToBrailleAlphabet.new
       braille_array = []
       char_array.map do |character|
         braille_array << alphabet.alpha_to_braille[character]

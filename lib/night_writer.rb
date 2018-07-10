@@ -1,5 +1,5 @@
 require "./lib/translator"
-require "./lib/braille_alphabet"
+require "./lib/english_to_braille_alphabet"
 
 translator = Translator.new(ARGV[0], ARGV[1])
 

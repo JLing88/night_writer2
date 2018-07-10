@@ -3,7 +3,6 @@ require "minitest/pride"
 require "./lib/night_writer"
 require "./lib/braille_alphabet"
 require "./lib/translator"
-require "pry"
 
 class NightWriterTest < Minitest::Test
 

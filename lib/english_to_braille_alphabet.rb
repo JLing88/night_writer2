@@ -1,4 +1,4 @@
-class BrailleAlphabet
+class EnglishToBrailleAlphabet
 
   attr_reader :alpha_to_braille
 

@@ -1,5 +1,4 @@
 require "./lib/english_to_braille_alphabet"
-require "pry"
 
 class Translator
 

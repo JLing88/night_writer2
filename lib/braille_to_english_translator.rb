@@ -1,20 +1,21 @@
-class Translator
+require './lib/braille_to_english_alphabet'
 
-  attr_reader :input_file, :output_file
+class Translator
 
   def initialize(input_file, output_file)
     @input_file = input_file
     @output_file = output_file
   end
 
-  def print_message
-    "Created '#{output_file}' containing 256 characters."
+  def print_message(input_string)
+    "Created '#{@output_file}' containing #{input_string.length} characters."
   end
 
   def read_from_file
     file_input = File.open(@input_file, "r")
     input_string = file_input.read
     file_input.close
-    input_string
+    print_message(input_string)
+    input_string.chomp
   end
 end

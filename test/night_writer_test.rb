@@ -21,19 +21,12 @@ class NightWriterTest < Minitest::Test
     assert_equal "Created 'output.txt' containing 2 characters", @translator.print_message("ab")
   end
 
-  def test_it_can_single_letter_to_braille_character
+  def test_it_can_translate_single_letter_to_braille_character
     assert_equal [@alphabet.alpha_to_braille["b"]], @translator.translate(["b"])
   end
 
-  def test_it_can_multiple_letters_to_braille_character
+  def test_it_can_translate_multiple_letters_to_braille_character
     assert_equal [@alphabet.alpha_to_braille["a"], @alphabet.alpha_to_braille["b"]], @translator.translate(["a", "b"])
   end
 
-  def test_it_can_transpose_braille_array_for_printing
-    input_string = @translator.read_from_file
-    input_string_array = @translator.convert_string_to_char_array(input_string)
-    translated_array = @translator.translate(input_string_array)
-    braille_string = @translator.format_braille_to_print(translated_array)
-    assert_equal "0.0.\n..0.\n....\n", braille_string.chomp
-  end
 end

@@ -10,4 +10,11 @@ class Translator
   def print_message
     "Created '#{output_file}' containing 256 characters."
   end
+
+  def read_from_file
+    file_input = File.open(@input_file, "r")
+    input_string = file_input.read
+    file_input.close
+    input_string
+  end
 end

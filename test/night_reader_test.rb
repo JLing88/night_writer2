@@ -19,4 +19,8 @@ class NightReaderTest < Minitest::Test
   def test_it_prints_message_to_terminal
     assert_equal "Created 'original_message.txt' containing 256 characters.", @translator.print_message
   end
+
+  def test_it_can_read_from_file_and_store_in_string
+
+  end
 end

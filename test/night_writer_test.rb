@@ -1,18 +1,18 @@
 require "minitest/autorun"
 require "minitest/pride"
 require "./lib/night_writer"
-require "./lib/braille_alphabet"
-require "./lib/translator"
+require "./lib/english_to_braille_alphabet"
+require "./lib/english_to_braille_translator"
 
 class NightWriterTest < Minitest::Test
 
   def setup
-    @alphabet = BrailleAlphabet.new
+    @alphabet = EnglishToBrailleAlphabet.new
     @translator = Translator.new(ARGV[0], ARGV[1])
   end
 
   def test_it_exists
-    assert_instance_of BrailleAlphabet, @alphabet
+    assert_instance_of EnglishToBrailleAlphabet, @alphabet
     assert_instance_of Translator, @translator
   end
 

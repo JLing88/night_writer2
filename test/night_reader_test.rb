@@ -12,8 +12,8 @@ class NightReaderTest < Minitest::Test
   end
 
   def test_it_exists
-    assert_equal Translator, @translator
-    assert_equal BrailleToEnglishAlphabet, @alphabet
+    assert_instance_of Translator, @translator
+    assert_instance_of BrailleToEnglishAlphabet, @alphabet
   end
 
   def test_it_prints_message_to_terminal

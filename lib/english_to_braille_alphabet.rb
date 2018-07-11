@@ -32,5 +32,5 @@ class EnglishToBrailleAlphabet
       "z" => [".0", "0.", "00"],
       " " => ["..", "..", ".."]
       }
-end
+    end
 end

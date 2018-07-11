@@ -18,4 +18,9 @@ class Translator
     print_message(input_string)
     input_string.chomp
   end
+
+  def translate(braille_array)
+    alphabet = BrailleToEnglishAlphabet.new
+    translated = alphabet.braille_to_english[braille_array]
+  end
 end

@@ -21,8 +21,8 @@ class NightReaderTest < Minitest::Test
   end
 
   def test_it_can_read_from_file_and_store_in_string
-    input_string = @translator.read_from_file()
-    assert_equal "abc", input_string
+    input_string = @translator.read_from_file
+    assert_equal "a", input_string
   end
 
   def test_it_has_a_dictionary
@@ -30,6 +30,6 @@ class NightReaderTest < Minitest::Test
   end
 
   def test_it_can_translate_single_braille_letter_to_english
-    assert_equal "a", @alphabet.translate[["0.", "..", ".."]]
+    assert_equal "a", @translator.translate(["0.", "..", ".."])
   end
 end
